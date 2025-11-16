@@ -1,0 +1,28 @@
+{
+  "name": "practical-fsd-v1-basic-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Basic example of Next.js 15 + FSD v1.0 architecture",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "next": "15.5.4"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.4",
+    "babel-plugin-react-compiler": "^1.0.0"
+  }
+}
