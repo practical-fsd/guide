@@ -58,6 +58,57 @@ function CourseList({ courses }) {
 // Compiler automatically applies useMemo, useCallback!
 ```
 
+## Why These Specific Versions?
+
+### Why Next.js 15.5.4 (not 16)?
+
+**Next.js 16 was just released and has compatibility issues:**
+
+- Released too recently (limited production testing)
+- Many third-party libraries don't support Next.js 16 yet
+- Ecosystem compatibility risks in production environments
+
+**Next.js 15.5.4 is the stable choice:**
+- Proven stability in production
+- Full library ecosystem support
+- React Compiler support via experimental flag
+
+### Why React 19.1.0 (not 19.2)?
+
+**We initially tried React 19.2 for better Compiler support:**
+```bash
+# ❌ This doesn't work with Next.js 15.5.4
+pnpm add react@19.2.0 react-dom@19.2.0
+```
+
+**Problem**: React 19.2 requires Next.js 16+
+
+Since we can't use Next.js 16 yet, we had to use React 19.1.0:
+- ✅ React 19.1.0 is compatible with Next.js 15.5.4
+- ✅ Still supports React Compiler 1.0
+- ✅ Requires `babel-plugin-react-compiler` in devDependencies
+
+### Why babel-plugin-react-compiler in devDependencies?
+
+**Critical for Next.js 15.5.4 + React 19.1 compatibility:**
+
+Without this plugin, React Compiler won't work in Next.js 15.5.4. The plugin bridges the gap between:
+- Next.js 15.5.4's experimental Compiler support
+- React 19.1's Compiler capabilities
+
+```json
+{
+  "devDependencies": {
+    "babel-plugin-react-compiler": "^1.0.0"  // Required!
+  }
+}
+```
+
+**Migration path**: When upgrading to Next.js 16 in the future, you can:
+1. Upgrade to React 19.2+
+2. Remove `babel-plugin-react-compiler` (no longer needed)
+3. Keep using React Compiler seamlessly
+
 ## Implementation
 
 ### Step 1: Install Dependencies

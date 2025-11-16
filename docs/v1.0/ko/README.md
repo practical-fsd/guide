@@ -158,6 +158,20 @@ export { EnrollmentButton } from './ui/EnrollmentButton';
 
 Next.js의 `app/` 폴더와 개념적 충돌을 피하기 위해서입니다. [자세히 →](./pages-to-views.md)
 
+### Q: 왜 Next.js 16이 아니라 15.5.4인가요?
+
+**Next.js 16은 너무 최신:**
+- 출시된 지 얼마 되지 않아 프로덕션 검증 부족
+- 많은 라이브러리가 아직 지원하지 않음
+- 생태계 호환성 리스크 존재
+
+**안정적인 경로 선택:**
+- Next.js 15.5.4 (프로덕션 검증됨)
+- React 19.1.0 (호환 가능, 19.2는 Next.js 16+ 필요)
+- devDependencies에 `babel-plugin-react-compiler` (Compiler 지원 필수)
+
+[상세 설명 →](./react-compiler-setup.md#버전-선택-이유)
+
 ### Q: FSD 공식 문서와 다른데 괜찮나요?
 
 네, v1.0은 Next.js에 최적화된 변형입니다. FSD 공식 팀도 프레임워크별 변형을 권장합니다.

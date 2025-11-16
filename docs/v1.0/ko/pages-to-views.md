@@ -275,4 +275,3 @@ views/ 계층이 올바르게 구현되었는지 확인:
 
 - [FSD 공식 문서 - Pages Layer](https://feature-sliced.design/docs/reference/layers#pages)
 - [Next.js App Router](https://nextjs.org/docs/app)
-- [우리의 결정 과정](../../docs/v1.0/case-study/architectural-decisions.md) (작성 예정)
