@@ -1,27 +1,28 @@
 {
-  "name": "practical-fsd",
-  "version": "0.1.0",
+  "name": "practical-fsd-monorepo",
+  "version": "1.0.0",
   "private": true,
+  "description": "Practical FSD - Next.js 15 + React Compiler + Feature-Sliced Design Guide",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "pnpm --filter ./examples/v1.0-basic dev",
+    "dev:v1": "pnpm --filter ./examples/v1.0-basic dev",
+    "build": "pnpm -r build",
+    "build:v1": "pnpm --filter ./examples/v1.0-basic build",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r exec rm -rf node_modules .next"
   },
-  "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.4"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+  "keywords": [
+    "nextjs",
+    "react",
+    "fsd",
+    "feature-sliced-design",
+    "react-compiler",
+    "architecture"
+  ],
+  "author": "Practical FSD Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/practical-fsd/guide"
   }
 }

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+/* Clean, professional design */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+/* Remove dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #ffffff;
+    color: #1f2937;
+  }
+}
