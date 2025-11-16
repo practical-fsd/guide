@@ -160,6 +160,20 @@ export { EnrollmentButton } from './ui/EnrollmentButton';
 
 To avoid conceptual conflicts with Next.js's `app/` folder. [Learn more →](./pages-to-views.md)
 
+### Q: Why Next.js 15.5.4 instead of 16?
+
+**Next.js 16 is too new:**
+- Just released, limited production testing
+- Many libraries don't support it yet
+- Ecosystem compatibility risks
+
+**We chose the stable path:**
+- Next.js 15.5.4 (proven in production)
+- React 19.1.0 (compatible, not 19.2 which requires Next.js 16+)
+- `babel-plugin-react-compiler` in devDependencies (required for Compiler support)
+
+[Detailed explanation →](./react-compiler-setup.md#why-these-specific-versions)
+
 ### Q: Is this different from official FSD?
 
 Yes, v1.0 is optimized for Next.js. The official FSD team encourages framework-specific adaptations.

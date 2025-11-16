@@ -56,6 +56,57 @@ function CourseList({ courses }) {
 // Compiler가 자동으로 useMemo, useCallback 적용!
 ```
 
+## 버전 선택 이유
+
+### Next.js 15.5.4를 사용하는 이유 (16이 아닌)
+
+**Next.js 16은 출시된 지 얼마 되지 않아 호환성 문제가 있습니다:**
+
+- 출시된 지 얼마 되지 않음 (프로덕션 검증 부족)
+- 많은 서드파티 라이브러리가 아직 Next.js 16을 지원하지 않음
+- 프로덕션 환경에서 생태계 호환성 리스크 존재
+
+**Next.js 15.5.4는 안정적인 선택:**
+- 프로덕션 환경에서 검증된 안정성
+- 라이브러리 생태계 완전 지원
+- experimental 플래그로 React Compiler 지원
+
+### React 19.1.0을 사용하는 이유 (19.2가 아닌)
+
+**처음에는 더 나은 Compiler 지원을 위해 React 19.2를 시도했습니다:**
+```bash
+# ❌ Next.js 15.5.4에서 작동하지 않음
+pnpm add react@19.2.0 react-dom@19.2.0
+```
+
+**문제**: React 19.2는 Next.js 16+ 필수
+
+Next.js 16을 아직 사용할 수 없어서 React 19.1.0을 사용해야 했습니다:
+- ✅ React 19.1.0은 Next.js 15.5.4와 호환됨
+- ✅ React Compiler 1.0 지원
+- ✅ devDependencies에 `babel-plugin-react-compiler` 필요
+
+### babel-plugin-react-compiler가 devDependencies에 필요한 이유
+
+**Next.js 15.5.4 + React 19.1 호환성을 위해 필수:**
+
+이 플러그인 없이는 Next.js 15.5.4에서 React Compiler가 작동하지 않습니다. 플러그인이 다음을 연결합니다:
+- Next.js 15.5.4의 실험적 Compiler 지원
+- React 19.1의 Compiler 기능
+
+```json
+{
+  "devDependencies": {
+    "babel-plugin-react-compiler": "^1.0.0"  // 필수!
+  }
+}
+```
+
+**마이그레이션 경로**: 향후 Next.js 16으로 업그레이드할 때:
+1. React 19.2+로 업그레이드
+2. `babel-plugin-react-compiler` 제거 (더 이상 불필요)
+3. React Compiler는 계속 원활하게 사용 가능
+
 ## 구현 방법 (Implementation)
 
 ### Step 1: 의존성 설치

@@ -13,12 +13,14 @@ Next.js 15와 Feature-Sliced Design을 통합한 실전 가이드입니다.
 
 ## 특징
 
-- ✅ **Next.js 15.5.4** + App Router
-- ✅ **React 19** + React Compiler 1.0
+- ✅ **Next.js 15.5.4** + App Router (v16 대신 안정적 선택)
+- ✅ **React 19.1** + React Compiler 1.0 (최적 호환성)
 - ✅ **FSD 6계층** 아키텍처 (`pages` → `views` 변경)
 - ✅ **TypeScript** 완전 지원
 - ✅ **실전 검증**: 프로덕션 환경에서 검증됨
 - ✅ **한국어/영어** 문서
+
+> **왜 Next.js 16이 아니라 15.5.4인가요?** Next.js 16은 출시된 지 얼마 되지 않아 생태계 지원이 부족합니다. 프로덕션 안정성을 위해 Next.js 15.5.4 + React 19.1 + `babel-plugin-react-compiler`를 사용합니다. [자세히 →](./docs/v1.0/ko/react-compiler-setup.md#버전-선택-이유)
 
 ## 빠른 시작
 

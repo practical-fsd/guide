@@ -277,4 +277,3 @@ Verify that the views/ layer is correctly implemented:
 
 - [FSD Official Docs - Pages Layer](https://feature-sliced.design/docs/reference/layers#pages)
 - [Next.js App Router](https://nextjs.org/docs/app)
-- [Our Decision Process](../../docs/v1.0/case-study/architectural-decisions.md) (coming soon)
